@@ -61,7 +61,7 @@ def getGiantessworldRecents():
 
             #Append sidebar string to output if not banned word
             if not ban:
-                output.append(f'* [{storyTitle}](http://www.giantessworld.net/{story.xpath("@href")[0]}&index=1)\n')
+                output.append((storyTitle,f'http://www.giantessworld.net/{story.xpath("@href")[0]}&index=1'))
         
         #Output only 10 most recent max
         if len(output) > 10:
@@ -77,8 +77,9 @@ def main():
     chan = getGTSthreads()
 
     print("---GTSworld most recents---")
-    print(''.join(gtsworld))
-    print("---4chan size threads---")
+    for s in gtsworld:
+        print(s)
+    print("\n---4chan size threads---")
     for t in chan:
         print(t)
 
