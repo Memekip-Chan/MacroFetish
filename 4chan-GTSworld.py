@@ -31,7 +31,7 @@ def getGTSthreads():
 
     return sizeThreads
 
-#Returns a list of Giantessworld links in a format ready to be inserted to the sidebar. In the format "* [title](link)"
+#Returns a list of Giantessworld links in the format: (title,link)
 def getGiantessworldRecents():
     #Make the request
     g = requests.get("http://giantessworld.net/browse.php?type=recent")
